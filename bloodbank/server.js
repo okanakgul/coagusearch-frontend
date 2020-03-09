@@ -15,6 +15,19 @@ var ReqStatus = require('./model/requestStatus');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+/*app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+ /* res.header(
+    "Access-Control-Allow-Headers", 
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    /*if(req.method === 'OPTIONS'){
+      res.header('Access-Control-Allow-Methods', 
+      'PUT, POST, PATCH, DELETE, GET');
+      return res.status(200).json({});
+    }
+});*/
+
 var bloodbank;
 
 
@@ -44,6 +57,7 @@ app.post('/bloodbank', function (request, response) {
       response.status(500).send("Could not save the BloodBank!");
     }
     else {
+      response.setHeader('Access-Control-Allow-Origin', '*');
       response.status(200).send(savedBloodbank);
     }
   });
@@ -255,6 +269,7 @@ app.post('/bloodReq', function (request, response) {
           db.close();
         });
       });
+      response.setHeader('Access-Control-Allow-Origin', '*');
       response.status(200).send(status);
     }
   });
@@ -268,6 +283,7 @@ app.get('/bloodReq', function (request, response) {
     if (err) {
       response.status(500).send({ error: "Could not fetch bloodReqs" });
     } else {
+      response.setHeader('Access-Control-Allow-Origin', '*');
       response.send(blood_reqs);
 
     }
