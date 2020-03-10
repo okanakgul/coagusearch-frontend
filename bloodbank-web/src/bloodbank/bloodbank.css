@@ -1,0 +1,21 @@
+table.b {
+    font-family: Times, "Times New Roman", serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+
+  td, th {
+    border: px solid #dddddd;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  thead{
+    text-align: center;
+    font-weight: bold;
+  }
