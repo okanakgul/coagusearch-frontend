@@ -1,6 +1,8 @@
 import 'whatwg-fetch';
 
 class HttpService{
+
+
     getBloodReqs = () =>{
         var promise = new Promise((resolve, reject) => {
             fetch('http://localhost:3004/bloodReq')

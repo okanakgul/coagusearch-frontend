@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import './bloodreq.css';
-var mybloodtype = "Not Specified";    
+
+var needUpdate = false;
+setInterval(function(){
+    if(needUpdate == true){
+        window.location.reload();
+        needUpdate = false;     
+     }
+}, 1000);
+
 class BloodReq extends Component {
 
-
+    
 
     render() {
         return (

@@ -65,9 +65,10 @@ app.post('/bloodbank', function (request, response) {
 
 app.post('/bloodReq', function (request, response) {
   var today = new Date();
-  var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  var timenow = (today.toLocaleString("tr-tr", {timeZone: "Europe/Istanbul"}).split(','));
+  var date = timenow[0];
 
-  var time = today.getUTCHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var time = timenow[1];
   var status = new ReqStatus();
   var blood_req = new BloodReq();
   blood_req.id = request.body.id;
@@ -77,6 +78,8 @@ app.post('/bloodReq', function (request, response) {
   blood_req.blood_type = request.body.blood_type;
   blood_req.units = request.body.units;
   blood_req.requester_name = request.body.requester_name;
+  blood_req.isUpdated = true;
+  
   switch (request.body.blood_type) {
 
 

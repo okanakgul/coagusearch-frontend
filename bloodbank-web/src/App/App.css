@@ -77,26 +77,3 @@ img {
     transform: rotate(360deg);
   }
 }
-
-table {
-  font-family: Times, "Times New Roman", serif;
-  border-collapse: collapse;
-  width: 100%;
-  border-spacing: 1000px;
-
-}
-
-td, th {
-  border: px solid #dddddd;
-  text-align: center;
-  padding: 10px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-thead{
-  text-align: center;
-  font-weight: bold;
-}

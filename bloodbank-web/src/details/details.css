@@ -1,15 +1,22 @@
+table {
+  font-family: Times, "Times New Roman", serif;
+  border-collapse: collapse;
+  width: 100%;
 
-  td, th {
-    border: px solid #dddddd;
-    text-align: center;
-    padding: 10px;
-  }
+}
+
+td, th {
   
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+  text-align: center;
+  padding: 10px;
+  width: 18.5% ;
+}
 
-  thead{
-    text-align: center;
-    font-weight: bold;
-  }
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+thead{
+  text-align: center;
+  font-weight: bold;
+}
