@@ -39,7 +39,6 @@ function uploadBloodbank() {
     dbo.collection("bloodbankitems").find(query).toArray(function (err, result) {
       if (err) throw err;
       bloodbank = result[0];
-      //console.log(bloodbank);
       db.close();
     });
   });
@@ -65,7 +64,7 @@ app.post('/bloodbank', function (request, response) {
 
 app.post('/bloodReq', function (request, response) {
   var today = new Date();
-  var timenow = (today.toLocaleString("tr-tr", {timeZone: "Europe/Istanbul"}).split(','));
+  var timenow = (today.toLocaleString("tr-tr", { timeZone: "Europe/Istanbul" }).split(','));
   var date = timenow[0];
 
   var time = timenow[1];
@@ -79,16 +78,17 @@ app.post('/bloodReq', function (request, response) {
   blood_req.units = request.body.units;
   blood_req.requester_name = request.body.requester_name;
   blood_req.isUpdated = true;
-  
+
   switch (request.body.blood_type) {
 
 
     case "ffp_0pos":
+      blood_req.blood_type_name = "FFP 0 Rh positive (0+)";
       if (request.body.units <= bloodbank.ffp_0pos) {
         status.req_status = "CONFIRMED!";
         bloodbank.ffp_0pos = bloodbank.ffp_0pos - request.body.units;
         blood_req.req_status = status.req_status;
-        blood_req.blood_type_name = "FFP 0 Rh positive (0+)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -96,11 +96,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "ffp_0neg":
+      blood_req.blood_type_name = "FFP 0 Rh negative (0-)";
       if (request.body.units <= bloodbank.ffp_0pos) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.ffp_0neg = bloodbank.ffp_0neg - request.body.units;
-        blood_req.blood_type_name = "FFP 0 Rh negative (0-)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -108,11 +109,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "ffp_Apos":
+      blood_req.blood_type_name = "FFP A Rh positive (A+)";
       if (request.body.units <= bloodbank.ffp_Apos) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.ffp_Apos = bloodbank.ffp_Apos - request.body.units;
-        blood_req.blood_type_name = "FFP A Rh positive (A+)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -121,11 +123,12 @@ app.post('/bloodReq', function (request, response) {
       break;
 
     case "ffp_Aneg":
+      blood_req.blood_type_name = "FFP A Rh negative (A-)";
       if (request.body.units <= bloodbank.ffp_Aneg) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.ffp_Aneg = bloodbank.ffp_Aneg - request.body.units;
-        blood_req.blood_type_name = "FFP A Rh negative (A-)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -134,11 +137,12 @@ app.post('/bloodReq', function (request, response) {
       break;
 
     case "ffp_Bpos":
+      blood_req.blood_type_name = "FFP B Rh positive (B+)";
       if (request.body.units <= bloodbank.ffp_Bpos) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.ffp_Bpos = bloodbank.ffp_Bpos - request.body.units;
-        blood_req.blood_type_name = "FFP B Rh positive (B+)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -146,11 +150,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "ffp_Bneg":
+      blood_req.blood_type_name = "FFP B Rh negative (B-)";
       if (request.body.units <= bloodbank.ffp_Bneg) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.ffp_Bneg = bloodbank.ffp_Bneg - request.body.units;
-        blood_req.blood_type_name = "FFP B Rh negative (B-)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -158,11 +163,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "ffp_ABpos":
+      blood_req.blood_type_name = "FFP AB Rh positive (AB+)";
       if (request.body.units <= bloodbank.ffp_ABpos) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.ffp_ABpos = bloodbank.ffp_ABpos - request.body.units;
-        blood_req.blood_type_name = "FFP AB Rh positive (AB+)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -170,11 +176,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "ffp_ABneg":
+      blood_req.blood_type_name = "FFP AB Rh negative (AB-)";
       if (request.body.units <= bloodbank.ffp_ABneg) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.ffp_ABneg = bloodbank.ffp_ABneg - request.body.units;
-        blood_req.blood_type_name = "FFP AB Rh negative (AB-)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -182,11 +189,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "pc_0pos":
+      blood_req.blood_type_name = "PC 0 Rh positive (0+)";
       if (request.body.units <= bloodbank.pc_0pos) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.pc_0pos = bloodbank.pc_0pos - request.body.units;
-        blood_req.blood_type_name = "PC 0 Rh positive (0+)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -194,11 +202,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "pc_0neg":
+      blood_req.blood_type_name = "PC 0 Rh negative (0-)";
       if (request.body.units <= bloodbank.pc_0neg) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.pc_0neg = bloodbank.pc_0neg - request.body.units;
-        blood_req.blood_type_name = "PC 0 Rh negative (0-)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -206,11 +215,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "pc_Apos":
+      blood_req.blood_type_name = "PC A Rh positive (A+)";
       if (request.body.units <= bloodbank.pc_Apos) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.pc_Apos = bloodbank.pc_Apos - request.body.units;
-        blood_req.blood_type_name = "PC A Rh positive (A+)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -218,11 +228,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "pc_Aneg":
+      blood_req.blood_type_name = "PC A Rh negative (A-)";
       if (request.body.units <= bloodbank.pc_Aneg) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.pc_Aneg = bloodbank.pc_Aneg - request.body.units;
-        blood_req.blood_type_name = "PC A Rh negative (A-)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -230,11 +241,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "pc_Bpos":
+      blood_req.blood_type_name = "PC B Rh positive (B+)";
       if (request.body.units <= bloodbank.pc_Bpos) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.pc_Bpos = bloodbank.pc_Bpos - request.body.units;
-        blood_req.blood_type_name = "PC B Rh positive (B+)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -242,11 +254,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "pc_Bneg":
+      blood_req.blood_type_name = "PC B Rh negative (B-)";
       if (request.body.units <= bloodbank.pc_Bneg) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.pc_Bneg = bloodbank.pc_Bneg - request.body.units;
-        blood_req.blood_type_name = "PC B Rh negative (B-)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -254,11 +267,12 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "pc_ABpos":
+      blood_req.blood_type_name = "PC AB Rh positive (AB+)";
       if (request.body.units <= bloodbank.pc_ABpos) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.pc_ABpos = bloodbank.pc_ABpos - request.body.units;
-        blood_req.blood_type_name = "PC AB Rh positive (AB+)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
@@ -266,17 +280,22 @@ app.post('/bloodReq', function (request, response) {
       }
       break;
     case "pc_ABneg":
+      blood_req.blood_type_name = "PC AB Rh negative (AB-)";
       if (request.body.units <= bloodbank.pc_ABneg) {
         status.req_status = "CONFIRMED!";
         blood_req.req_status = status.req_status;
         bloodbank.pc_ABneg = bloodbank.pc_ABneg - request.body.units;
-        blood_req.blood_type_name = "PC AB Rh negative (AB-)";
+
       }
       else {
         status.req_status = "Rejected (Lack of Source)!";
         blood_req.req_status = status.req_status;
       }
       break;
+      default:
+        blood_req.blood_type_name = request.body.blood_type;
+        status.req_status = "Invalid Request!";
+        blood_req.req_status = status.req_status;
   }
 
   blood_req.save(function (err, savedBloodReq) {
