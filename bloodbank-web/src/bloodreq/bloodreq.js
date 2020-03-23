@@ -18,12 +18,12 @@ class BloodReq extends Component {
             <table className="table">
                 <tbody>
                     <tr>
-                        <td>{this.props.req_date}</td>
-                        <td>{this.props.req_time}</td>
-                        <td>{this.props.blood_type_name}</td>
-                        <td>{this.props.units}</td>
-                        <td>{this.props.requester_name}</td>
-                        <td>{this.props.req_status}</td>
+                        <td class="req">{this.props.req_date}</td>
+                        <td class="req">{this.props.req_time}</td>
+                        <td class="req">{this.props.blood_type_name}</td>
+                        <td class="req">{this.props.units}</td>
+                        <td class="req">{this.props.requester_name}</td>
+                        <td class="req">{this.props.req_status}</td>
                     </tr>
                 </tbody>
             </table>

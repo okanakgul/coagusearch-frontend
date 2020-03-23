@@ -25,7 +25,7 @@
 
 .App-logo {
 
-  animation: flip infinite 3s linear;
+  animation: flip infinite 5s linear;
   /*-webkit-animation-name: flip;
           animation-name: flip;
   -webkit-animation-duration: 3s;
@@ -55,10 +55,14 @@ img {
 }*/
 
 .App-header {
-  background-color: #282c34;
+  background-color: #101010;
   height: 150px;
   padding: 20px;
+  display: flex;
   color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-link {
@@ -66,8 +70,13 @@ img {
 }
 
 .App-main{
-  
+  border: 1px solid transparent;
+  background: #101010;
 }
+
+
+
+
 
 @keyframes App-logo-spin {
   from {
@@ -77,3 +86,208 @@ img {
     transform: rotate(360deg);
   }
 }
+
+td.a, th.a {
+  border: px solid #dddddd;
+  text-align: center;
+  padding: 10px;
+  color: black;
+  font-weight: 600;
+
+}
+
+td.b, th.b {
+  border: px solid #dddddd;
+  text-align: center;
+  padding: 10px;
+  color: rgb(212, 203, 202);
+  font-weight: 800;
+}
+
+td.req, th.req {
+  border: px solid #dddddd;
+  text-align: center;
+  padding: 10px;
+  color: rgb(174, 174, 175);
+  font-weight: 800;
+}
+
+p{
+  color: #808080;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 400;
+}
+
+h3{
+  color: white;
+}
+
+
+/* divider section */
+.divider .divider-wrapper {
+  padding: 40px 20px 40px 20px;
+  position: relative;
+  bottom: 40px;
+  transition: all 0.4s ease-in;
+}
+.divider .divider-wrapper:hover {
+  bottom: 60px;
+  cursor: pointer;
+}
+.divider .divider-one {
+  background: #c14000;
+}
+.divider .divider-two {
+  background: #009988;
+}
+.divider .divider-three {
+  background: #ffa500;
+}
+
+.divider .divider-fourth {
+  background: #343676;
+}
+
+
+
+#home {
+  background: url('../images/blood-bag.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  padding-top: 180px;
+  padding-bottom: 100px;
+}
+
+/* navigation */
+
+.navbar-default {
+  background: #202020;
+  border: none;
+  border-left: 6px solid #d54ab6;
+  padding-right: 40px;
+  margin: 0 !important;
+  position: relative;
+  top: 20px;
+  
+}
+.navbar-default .navbar-brand {
+  font-size: 40px;
+  line-height: 40px;
+  padding-top: 4px;
+ }
+.navbar-default .navbar-nav li a {
+color: #f2f2f2;
+font-size: 13px;
+font-weight: 400;
+line-height: 40px;
+transition: all 0.4s ease-in;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+color: #ffa500;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffa500;
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle {
+  background: #d54ab6;
+  border-radius: 0px;
+   border: none;
+   margin-top: 20px;
+   margin-bottom: 30px;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background: #fff;
+  border-color: transparent;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus { 
+background-color: transparent 
+}
+
+.active {
+background: #333;
+}
+
+/* footer section */
+footer {
+  background: #1c1c1c;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+footer .fa {
+	font-size: 18px;
+	margin-right: 10px;
+	padding: 5px;
+}
+footer h3 {
+  padding-bottom: 10px;
+}
+footer .newsletter p {
+  padding-bottom: 10px;
+}
+footer .form-control {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 0px;
+  padding-bottom: 10px;
+}
+
+footer .form-control:focus,
+footer .form-control:hover {
+	color: #fff;
+  	background: #806040;
+  	border-color: transparent;
+}
+footer .input-group-addon {
+  background: #fff;
+}
+footer a, footer a:visited {
+  font-size: 14px;
+  color: #999;
+}
+footer a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* copyright section */
+.copyright {
+	margin: 10px 0px;
+}
+.copyright p {
+  padding-top: 20px;
+}
+.social-icons {
+  padding: 0px;
+  margin: 0px;
+}
+.social-icons li {
+  display: inline-block;
+  list-style: none;
+  background: #303030;
+  margin: 10px 0px 0px 0px;
+}
+.social-icons li a {
+  color: #909090;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 15px;
+  text-align: center;
+  transition: all 0.4s ease-in;
+  
+}
+.social-icons li a:hover {
+  background: #d54ab6;
+  color: #fff;
+}
+
+
+
+
+
+
