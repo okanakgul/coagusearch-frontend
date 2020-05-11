@@ -14,17 +14,28 @@
 }*/
 
 @-webkit-keyframes flip {
-  from { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
-  to { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
+  from {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
 }
 
 @keyframes flip {
-  from { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
-  to { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
+  from {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
 }
 
 .App-logo {
-
   animation: flip infinite 5s linear;
   /*-webkit-animation-name: flip;
           animation-name: flip;
@@ -69,14 +80,10 @@ img {
   color: #61dafb;
 }
 
-.App-main{
+.App-main {
   border: 1px solid transparent;
   background: #101010;
 }
-
-
-
-
 
 @keyframes App-logo-spin {
   from {
@@ -87,16 +94,17 @@ img {
   }
 }
 
-td.a, th.a {
+td.a,
+th.a {
   border: px solid #dddddd;
   text-align: center;
   padding: 10px;
   color: black;
   font-weight: 600;
-
 }
 
-td.b, th.b {
+td.b,
+th.b {
   border: px solid #dddddd;
   text-align: center;
   padding: 10px;
@@ -104,24 +112,36 @@ td.b, th.b {
   font-weight: 800;
 }
 
-td.req, th.req {
+td.stat,
+th.stat {
+  border: px solid #dddddd;
+  text-align: center;
+  padding: 10px;
+  color: rgb(211, 205, 205);
+  font-weight: 800;
+  width: 18.18%;
+}
+
+td.req,
+th.req {
   border: px solid #dddddd;
   text-align: center;
   padding: 10px;
   color: rgb(174, 174, 175);
   font-weight: 800;
+  width: 18.18%;
 }
 
-p{
+p {
   color: #808080;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   font-weight: 400;
 }
 
-h3{
+h3 {
   color: white;
 }
-
 
 /* divider section */
 .divider .divider-wrapper {
@@ -148,10 +168,8 @@ h3{
   background: #343676;
 }
 
-
-
 #home {
-  background: url('../images/blood-bag.jpg') no-repeat;
+  background: url("../images/blood-bag.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 500px;
@@ -169,23 +187,22 @@ h3{
   margin: 0 !important;
   position: relative;
   top: 20px;
-  
 }
 .navbar-default .navbar-brand {
   font-size: 40px;
   line-height: 40px;
   padding-top: 4px;
- }
+}
 .navbar-default .navbar-nav li a {
-color: #f2f2f2;
-font-size: 13px;
-font-weight: 400;
-line-height: 40px;
-transition: all 0.4s ease-in;
+  color: #f2f2f2;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 40px;
+  transition: all 0.4s ease-in;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-color: #ffa500;
+  color: #ffa500;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -196,21 +213,21 @@ color: #ffa500;
 .navbar-default .navbar-toggle {
   background: #d54ab6;
   border-radius: 0px;
-   border: none;
-   margin-top: 20px;
-   margin-bottom: 30px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background: #fff;
   border-color: transparent;
 }
 .navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus { 
-background-color: transparent 
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
 }
 
 .active {
-background: #333;
+  background: #333;
 }
 
 /* footer section */
@@ -220,9 +237,9 @@ footer {
   padding-bottom: 60px;
 }
 footer .fa {
-	font-size: 18px;
-	margin-right: 10px;
-	padding: 5px;
+  font-size: 18px;
+  margin-right: 10px;
+  padding: 5px;
 }
 footer h3 {
   padding-bottom: 10px;
@@ -239,14 +256,15 @@ footer .form-control {
 
 footer .form-control:focus,
 footer .form-control:hover {
-	color: #fff;
-  	background: #806040;
-  	border-color: transparent;
+  color: #fff;
+  background: #806040;
+  border-color: transparent;
 }
 footer .input-group-addon {
   background: #fff;
 }
-footer a, footer a:visited {
+footer a,
+footer a:visited {
   font-size: 14px;
   color: #999;
 }
@@ -257,7 +275,7 @@ footer a:hover {
 
 /* copyright section */
 .copyright {
-	margin: 10px 0px;
+  margin: 10px 0px;
 }
 .copyright p {
   padding-top: 20px;
@@ -279,15 +297,8 @@ footer a:hover {
   padding: 10px 15px;
   text-align: center;
   transition: all 0.4s ease-in;
-  
 }
 .social-icons li a:hover {
   background: #d54ab6;
   color: #fff;
 }
-
-
-
-
-
-
