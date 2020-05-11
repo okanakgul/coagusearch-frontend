@@ -4,7 +4,7 @@ import brandLogo from "../images/logo.jpg";
 import "./App.css";
 import HttpService from "../services/http-service";
 import Bloodreq from "../bloodreq/bloodreq";
-import Bloodbank from "../bloodbank/bloodbank";
+//import Bloodbank from "../bloodbank/bloodbank";
 import Details from "../details/details";
 import BloodbankA from "../bloodbank/bloodbankA";
 import Bloodbank0 from "../bloodbank/bloodbank0";
@@ -32,7 +32,10 @@ class App extends Component {
 
     setTimeout(function afterOneSeconds() {
       self.bloodreqList = self.bloodreqList.bind(self);
-      self.bloodbankList = self.bloodbankList.bind(self);
+      self.bloodbankList0 = self.bloodbankList0.bind(self);
+      self.bloodbankListA = self.bloodbankListA.bind(self);
+      self.bloodbankListB = self.bloodbankListB.bind(self);
+      self.bloodbankListAB = self.bloodbankListAB.bind(self);
 
       var orderedList = self.state.bloodreq.sort();
       orderedList = orderedList.reverse();
@@ -132,38 +135,6 @@ class App extends Component {
     return list;
   };
 
-  bloodbankList = () => {
-    const list = this.state.bloodbank.map(bloodbank => (
-      <div className="col-sm" key={bloodbank._id}>
-        <Bloodbank
-          ffp_0pos={bloodbank.ffp_0pos}
-          ffp_0neg={bloodbank.ffp_0neg}
-          ffp_Apos={bloodbank.ffp_Apos}
-          ffp_Aneg={bloodbank.ffp_Aneg}
-          ffp_Bpos={bloodbank.ffp_Bpos}
-          ffp_Bneg={bloodbank.ffp_Bneg}
-          ffp_ABpos={bloodbank.ffp_ABpos}
-          ffp_ABneg={bloodbank.ffp_ABneg}
-          pc_0pos={bloodbank.pc_0pos}
-          pc_0neg={bloodbank.pc_0neg}
-          pc_Apos={bloodbank.pc_Apos}
-          pc_Aneg={bloodbank.pc_Aneg}
-          pc_Bpos={bloodbank.pc_Bpos}
-          pc_Bneg={bloodbank.pc_Bneg}
-          pc_ABpos={bloodbank.pc_ABpos}
-          pc_ABneg={bloodbank.pc_ABneg}
-        />
-        <BloodbankA
-          ffp_0pos={bloodbank.ffp_0pos}
-          ffp_Apos={bloodbank.ffp_Apos}
-          ffp_Bpos={bloodbank.ffp_Bpos}
-          ffp_ABpos={bloodbank.ffp_ABpos}
-        />
-      </div>
-    ));
-    return list;
-  };
-
   bloodreqList = () => {
     const list = this.state.bloodreq.map(bloodreq => (
       <div className="col-sm" key={bloodreq._id}>
@@ -181,39 +152,10 @@ class App extends Component {
     return list;
   };
 
-  /*render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="" />
-          <h2>National Blood Bank</h2>
-        </div>
-        <div>{this.bloodbankList()}</div>
-        <div className="App-main">
-          <div className="table">
-            <table>
-              <Details />
-            </table>
-            <div className="table">{this.bloodreqList()}</div>
-          </div>
-        </div>
-      </div>
-    );
-  }*/
-  /*
-              <a href="#" class="navbar-brand">
-                <img
-                  srcSet="../images/blood-bag.jpg"
-                  class="img-responsive"
-                  alt="logo"
-                ></img>
-              </a>
-              */
   render() {
     return (
       <div className="App-main">
-
-<div className="App-header">
+        <div className="App-header">
           <img src={logo} className="App-logo" alt="" />
         </div>
 
@@ -253,133 +195,134 @@ class App extends Component {
           </div>
         </div>
         <div>
-        {this.bloodreqList()}
+          <Details />
+          {this.bloodreqList()}
         </div>
-        
-        
 
-        
-          <footer>
-            <div class="container">
-              <div class = "row">
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 col-sm-4">
+                <img src={brandLogo} class="img-responsive" alt="logo" />
+                <p>
+                  This site has been developed for simulation.
+                  <a
+                    rel="nofollow"
+                    href="https://ku.blackboard.com/webapps/login/"
+                    target="_parent"
+                  >
+                    {" "}
+                    Click here{" "}
+                  </a>
+                  to reach KU Blackboard.
+                </p>
 
-                <div class="col-md-5 col-sm-4">
-                  <img src={brandLogo} class="img-responsive" alt="logo"/>
-                  <p>This site has been developed for simulation. 
-                  <a rel="nofollow" href="https://ku.blackboard.com/webapps/login/" target="_parent"> Click here </a>
-                  to reach KU Blackboard.</p>
-              
-                  <p><i class="fa fa-phone"></i> <a rel="nofollow" href="tel:+905076842914" target="_parent"> +90 507 684 2914 </a></p>
+                <p>
+                  <i class="fa fa-phone"></i>{" "}
+                  <a rel="nofollow" href="tel:+905076842914" target="_parent">
+                    {" "}
+                    +90 507 684 2914{" "}
+                  </a>
+                </p>
 
-                  <p><i class="fa fa-envelope-o"></i> <a rel="nofollow" href="mailto:bogobogotech@gmail.com" target="_parent"> bogobogotech@gmail.com </a></p>
-                  <p><i class="fa fa-globe"></i> <a rel="nofollow" href="https://www.ku.edu.tr/en/" target="_parent"> www.ku.edu.tr </a></p>
-                </div>
+                <p>
+                  <i class="fa fa-envelope-o"></i>{" "}
+                  <a
+                    rel="nofollow"
+                    href="mailto:bogobogotech@gmail.com"
+                    target="_parent"
+                  >
+                    {" "}
+                    bogobogotech@gmail.com{" "}
+                  </a>
+                </p>
+                <p>
+                  <i class="fa fa-globe"></i>{" "}
+                  <a
+                    rel="nofollow"
+                    href="https://www.ku.edu.tr/en/"
+                    target="_parent"
+                  >
+                    {" "}
+                    www.ku.edu.tr{" "}
+                  </a>
+                </p>
+              </div>
 
-                <div class="col-md-3 col-sm-4">
-			            <h3>Useful Links</h3>
-				          <p><a href="https://ku.blackboard.com/webapps/login/">KU Blackboard</a></p>
-				          <p><a href="https://kusis.ku.edu.tr/">Kusis</a></p>
-				          <p><a href="https://kocuni.hosted.panopto.com/">KU Panopto</a></p>
-				          <p><a href="https://kuttam.ku.edu.tr/">KUTTAM</a></p>
-			          </div>
+              <div class="col-md-3 col-sm-4">
+                <h3>Useful Links</h3>
+                <p>
+                  <a href="https://ku.blackboard.com/webapps/login/">
+                    KU Blackboard
+                  </a>
+                </p>
+                <p>
+                  <a href="https://kusis.ku.edu.tr/">Kusis</a>
+                </p>
+                <p>
+                  <a href="https://kocuni.hosted.panopto.com/">KU Panopto</a>
+                </p>
+                <p>
+                  <a href="https://kuttam.ku.edu.tr/">KUTTAM</a>
+                </p>
+              </div>
 
-                <div class="col-md-4 col-sm-4 newsletter">
-                  <h3>Notes</h3>
-				          <p>In case of emergency please do not hesitate to contact us.</p>
-                </div>
-
+              <div class="col-md-4 col-sm-4 newsletter">
+                <h3>Notes</h3>
+                <p>
+                  In case of emergency please do not hesitate to contact us.
+                </p>
               </div>
             </div>
-          </footer>
+          </div>
+        </footer>
 
-          <div class="copyright">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<p>Copyright © 2020 Bogobogo Tech</p>
-			</div>
-			<div class="col-md-6 col-sm-6">
-				<ul class="social-icons">
-					<li><a href="https://www.linkedin.com/company/bogobogo-tech" class="fab fa-linkedin"></a></li>
-          <li><a href="https://www.facebook.com/bogobogotech" class="fab fa-facebook-square"></a></li>
-          <li><a href="https://www.ku.edu.tr/en/" class="fas fa-university"></a></li>
-          <li><a href="https://kuh.ku.edu.tr/tr" class="fas fa-clinic-medical"></a></li>
-          <li><a href="mailto:bogobogotech@gmail.com" class="fa fa-envelope-o"></a></li>			
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-        
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <p>Copyright © 2020 Bogobogo Tech</p>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <ul class="social-icons">
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/bogobogo-tech"
+                      class="fab fa-linkedin"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/bogobogotech"
+                      class="fab fa-facebook-square"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ku.edu.tr/en/"
+                      class="fas fa-university"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://kuh.ku.edu.tr/tr"
+                      class="fas fa-clinic-medical"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:bogobogotech@gmail.com"
+                      class="fa fa-envelope-o"
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-
-     
+      </div>
     );
   }
 }
-
-/*
- 
-   render() {
-     return (
-       <div className="App-main">
-         <div className = "table">
-         <table>
-           <thead>
-                     <tr>
-                         <td>Request Date</td>
-                         <td>Request Time</td>
-                         <td>Blood Type</td>
-                         <td>Unit(s)</td>
-                         <td>Requester Name</td>
-                         <td>Request Status</td>
-                     </tr>
-                 </thead> 
-           </table>
-           <table>
-           {this.bloodreqList()}
-           </table>
-         </div>
-       </div>
-     );
-   }
- */
-
-/*function App() {
-
-  constructor(props){
-    super(props);
-    http.getBloodReqs();
-  }
-
- 
-
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>This is the National-BloodBank</h2>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          //href="https://reactjs.org"
-          href="https://www.google.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}*/
 
 export default App;

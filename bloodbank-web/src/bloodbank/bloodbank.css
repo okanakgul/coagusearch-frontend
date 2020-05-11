@@ -1,11 +1,10 @@
 table.b {
-    font-family: Times, "Times New Roman", serif;
-    border-collapse: collapse;
-    width: 100%;
-    
-  }
+  font-family: Times, "Times New Roman", serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-  thead{
-    text-align: center;
-    font-weight: bold;
-  }
+thead {
+  text-align: center;
+  font-weight: bold;
+}
